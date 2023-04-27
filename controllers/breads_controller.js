@@ -1,6 +1,8 @@
 const express = require("express");
 const breads = express.Router();
 const Bread = require("../models/bread.js");
+// DEPENDENCIES
+const methodOverride = require('method-override')
 
 // INDEX
 breads.get('/', (req, res) => {
@@ -37,8 +39,7 @@ breads.delete('/:indexArray', (req, res) => {
     res.status(303).redirect('/breads')
   })
   
-// DEPENDENCIES
-const methodOverride = require('method-override')
+
 
 // SHOW
 breads.get('/:arrayIndex', (req, res) => {
